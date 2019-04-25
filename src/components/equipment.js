@@ -8,9 +8,17 @@ const EquipmentContainer = styled.div`
   text-align: center;
   padding: 30px 20px 70px;
 
+  @media screen and (max-width: 830px) {
+    text-align: left;
+  }
+
   p {
     max-width: 75%;
     margin: 20px auto 30px;
+
+    @media screen and (max-width: 830px) {
+      max-width: 100%;
+    }
   }
 
   .flex {
@@ -38,6 +46,10 @@ const EquipmentItem = styled.div`
   p {
     margin: 0 auto;
     padding: 30px 10px 40px;
+
+    @media screen and (max-width: 830px) {
+      padding: 20px;
+    }
   }
 
   .equipment-name {

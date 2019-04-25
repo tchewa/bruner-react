@@ -9,6 +9,10 @@ import VideoIcon from "../images/Bits/Icons/video.svg"
 
 const PackageContainer = styled.div`
   padding: 30px 20px 70px;
+
+  @media screen and (max-width: 830px) {
+    padding: 30px 20px;
+  }
   .four-column {
     display: flex;
 
@@ -24,7 +28,8 @@ const PackageContainer = styled.div`
       margin-bottom: 15px;
     }
     @media screen and (max-width: 1200px) {
-      max-width: 75%;
+      max-width: 100%;
+      margin: 20px auto 0;
     }
   }
 
@@ -43,6 +48,16 @@ const PackageCardItem = styled.div`
   transition: .25s;
   height: 500px;
 
+  .package-details {
+    @media screen and (max-width: 830px) {
+      display: none;
+
+      &.opened {
+        display: block;
+      }
+    }
+  }
+
   @media screen and (max-width: 1000px) {
     width: 50%;
     margin-bottom: 20px;
@@ -57,30 +72,36 @@ const PackageCardItem = styled.div`
 
 
   &:hover {
+    @media screen and (min-width: 1000px) {
+      .package-title {
+        color: #99AF21;
+      }
+      .package-cta {
+        background-color: #99AF21;
+      }
+      .package-title-content {
+        border-bottom: 2px solid #99AF21;
+      }
+    }
+
     box-shadow: 5px 5px 21px 0px #D8D8D8;
     border-left: 3px solid transparent;
     transform: scale(1.07);
     z-index: 5;
 
-    .package-title {
-      color: #99AF21;
-    }
-    .package-cta {
-      background-color: #99AF21;
-    }
-    .package-title-content {
-      border-bottom: 2px solid #99AF21;
-    }
 
     @media screen and (max-width: 1000px) {
       transform: scale(1);
+    }
+
+    @media screen and (max-width: 830px) {
       border-left: none;
     }
   }
 
   img {
     display: inline-block;
-    margin-right: 10px;
+    margin: 5px 10px 0 0;
   }
 
   h4 {
@@ -91,8 +112,64 @@ const PackageCardItem = styled.div`
   .package-title-content {
     border-bottom: 2px solid #009FE3;
     margin-bottom: 25px;
+    position: relative;
     p {
       margin-bottom: 20px;
+    }
+  }
+
+  .show-hide-details {
+    display: none;
+    position: absolute;
+    right: 0;
+    top: 0;
+    cursor: pointer;
+    padding-right: 20px;
+    p {
+      margin: 0;
+    }
+
+    &.active {
+      .see-more {
+        display: none;
+      }
+      .see-less {
+        display: block;
+      }
+    }
+    @media screen and (max-width: 830px) {
+      display: block;
+    }
+  }
+
+  .see-more,
+  .see-less {
+    &:after {
+      content: "";
+      display: block;
+      width: 8px;
+      height: 8px;
+      border: 2px solid #8B8F95;
+      position: absolute;
+      right: 0;
+      border-top: transparent;
+      border-left: transparent;
+    }
+  }
+
+  .see-more {
+    display: block;
+    &:after {
+      top: 3px;
+      transform: rotate(45deg);
+    }
+  }
+
+  .see-less {
+    display: none;
+    &:after {
+      transform: rotate(-135deg);
+      top: 7px;
     }
   }
 
@@ -150,11 +227,18 @@ const PackageCardItem = styled.div`
   }
 
   .package-content-item {
-    p {
-      margin-left: 30px;
-    }
+    display: flex;
+    align-items: flex-start;
   }
 `
+
+const handleClick = (e) => {
+  return (
+    console.log(e.currentTarget.parentElement.nextElementSibling),
+    e.currentTarget.classList.toggle('active'),
+    e.currentTarget.parentElement.nextElementSibling.classList.toggle('opened')
+  )
+};
 
 const PackageCards = () => (
   <PackageContainer>
@@ -165,21 +249,33 @@ const PackageCards = () => (
           <h3 className="package-title">Pamantha</h3>
           <h2 className="package-price"><span className="price-bold">50</span><span className="price-decimal">00</span>/mo</h2>
           <p>$5/mo after we're best friends</p>
+          <div className="show-hide-details" onClick={ (e) => { return handleClick(e)} }>
+            <p className="see-more">See More</p>
+            <p className="see-less">See Less</p>
+          </div>
         </div>
-        <div class="package-content-item">
-          <img src={MoneyIcon} alt="Money"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
-        </div>
-        <div class="package-content-item">
-          <img src={VideoIcon} alt="Video"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
-        </div>
-        <div class="package-content-item">
-          <img src={ClapsIcon} alt="Claps"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
+        <div className="package-details">
+          <div className="package-content-item">
+            <img src={MoneyIcon} alt="Money"/>
+            <div className="package-content-item-details">
+              <h4>Free Change</h4>
+              <p>Need to break a $20? We can help.</p>
+            </div>
+          </div>
+          <div className="package-content-item">
+            <img src={VideoIcon} alt="Video"/>
+            <div className="package-content-item-details">
+              <h4>Service Video Suggestions</h4>
+              <p>We'll send you hilarious youtube clips.</p>
+            </div>
+          </div>
+          <div className="package-content-item">
+            <img src={ClapsIcon} alt="Claps"/>
+            <div className="package-content-item-details">
+              <h4>Complimentary Claps</h4>
+              <p>Included at no additional cost.</p>
+            </div>
+          </div>
         </div>
         <div className="package-cta">Order the pamantha<span>1.888.888.8888</span></div>
       </PackageCardItem>
@@ -188,21 +284,33 @@ const PackageCards = () => (
           <h3 className="package-title">el ten eleven</h3>
           <h2 className="package-price"><span className="price-bold">50</span><span className="price-decimal">00</span>/mo</h2>
           <p>$5/mo after we're best friends</p>
+          <div className="show-hide-details" onClick={ (e) => { return handleClick(e)} }>
+            <p className="see-more">See More</p>
+            <p className="see-less">See Less</p>
+          </div>
         </div>
-        <div class="package-content-item">
-          <img src={BellIcon} alt="Bell"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
-        </div>
-        <div class="package-content-item">
-          <img src={VideoIcon} alt="Video"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
-        </div>
-        <div class="package-content-item">
-          <img src={ClapsIcon} alt="Claps"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
+        <div className="package-details">
+          <div className="package-content-item">
+            <img src={BellIcon} alt="Bell"/>
+            <div className="package-content-item-details">
+              <h4>Patriotic Media</h4>
+              <p>Consume any patriotic content for free.*</p>
+            </div>
+          </div>
+          <div className="package-content-item">
+            <img src={VideoIcon} alt="Video"/>
+            <div className="package-content-item-details">
+              <h4>Jurassic Park Channel</h4>
+              <p>Channel 345 plays Jurassic Park all day.</p>
+            </div>
+          </div>
+          <div className="package-content-item">
+            <img src={ClapsIcon} alt="Claps"/>
+            <div className="package-content-item-details">
+              <h4>Chip Bag Service</h4>
+              <p>Subborn bag of chips? We can help.</p>
+            </div>
+          </div>
         </div>
         <div className="package-cta">select el ten eleven<span>1.888.888.8888</span></div>
       </PackageCardItem>
@@ -211,21 +319,33 @@ const PackageCards = () => (
           <h3 className="package-title">st. jimmys special</h3>
           <h2 className="package-price"><span className="price-bold">50</span><span className="price-decimal">00</span>/mo</h2>
           <p>$5/mo after we're best friends</p>
+          <div className="show-hide-details" onClick={ (e) => { return handleClick(e)} }>
+            <p className="see-more">See More</p>
+            <p className="see-less">See Less</p>
+          </div>
         </div>
-        <div class="package-content-item">
-          <img src={VideoIcon} alt="Video"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
-        </div>
-        <div class="package-content-item">
-          <img src={MoneyIcon} alt="Money"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
-        </div>
-        <div class="package-content-item">
-          <img src={BellIcon} alt="Bell"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
+        <div className="package-details">
+          <div className="package-content-item">
+            <img src={VideoIcon} alt="Video"/>
+            <div className="package-content-item-details">
+              <h4>Raft Jousing Channel</h4>
+              <p>Catch all the RJA action in one place.</p>
+            </div>
+          </div>
+          <div className="package-content-item">
+            <img src={MoneyIcon} alt="Money"/>
+            <div className="package-content-item-details">
+              <h4>Reptile Disease Network</h4>
+              <p>Snakes with warts? Look no further.</p>
+            </div>
+          </div>
+          <div className="package-content-item">
+            <img src={BellIcon} alt="Bell"/>
+            <div className="package-content-item-details">
+              <h4>Broken Faucet Repair</h4>
+              <p>Anytime day or night. **</p>
+            </div>
+          </div>
         </div>
         <div className="package-cta">become enlightened<span>1.888.888.8888</span></div>
       </PackageCardItem>
@@ -234,21 +354,33 @@ const PackageCards = () => (
           <h3 className="package-title">cult hero classic</h3>
           <h2 className="package-price"><span className="price-bold">50</span><span className="price-decimal">00</span>/mo</h2>
           <p>$5/mo after we're best friends</p>
+          <div className="show-hide-details" onClick={ (e) => { return handleClick(e)} }>
+            <p className="see-more">See More</p>
+            <p className="see-less">See Less</p>
+          </div>
         </div>
-        <div class="package-content-item">
-          <img src={MoneyIcon} alt="Money"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
-        </div>
-        <div class="package-content-item">
-          <img src={BellIcon} alt="Bell"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
-        </div>
-        <div class="package-content-item">
-          <img src={ClapsIcon} alt="Claps"/>
-          <h4>Free Change</h4>
-          <p>Need to break a $20? We can help.</p>
+        <div className="package-details">
+          <div className="package-content-item">
+            <img src={MoneyIcon} alt="Money"/>
+            <div className="package-content-item-details">
+              <h4>Gaming Currency</h4>
+              <p>We now accept Mario and Sonic coins.</p>
+            </div>
+          </div>
+          <div className="package-content-item">
+            <img src={BellIcon} alt="Bell"/>
+            <div className="package-content-item-details">
+              <h4>Landline Service</h4>
+              <p>Crystal clear calls to Grandma.</p>
+            </div>
+          </div>
+          <div className="package-content-item">
+            <img src={ClapsIcon} alt="Claps"/>
+            <div className="package-content-item-details">
+              <h4>Shuttlecock Recovery</h4>
+              <p>We will retrieve stray shuttlecocks at your next badminton match.†</p>
+            </div>
+          </div>
         </div>
         <div className="package-cta">join the cult<span>1.888.888.8888</span></div>
       </PackageCardItem>

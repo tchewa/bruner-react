@@ -6,6 +6,10 @@ import styled from "@emotion/styled"
 const SideBySideContainer = styled.div`
   padding: 100px 0;
 
+  @media screen and (max-width: 1000px) {
+    padding: 30px 20px 70px;
+  }
+
   &.white {
     background-color: #FFF;
   }

@@ -19,6 +19,7 @@ const FooterContainer = styled.footer`
   background-image: url(${BgFooter});
   background-size: cover;
   height: 600px;
+  padding: 30px 20px 70px;
 
   @media screen and (max-width: 830px) {
     height: 300px;

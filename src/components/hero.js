@@ -18,7 +18,7 @@ const HeroContainer = styled.div`
     margin: 0 auto;
 
     @media screen and (max-width: 830px) {
-      margin: inherit;
+      margin: 50px 0;
       font-size: 2.5em;
     }
   }
@@ -49,6 +49,12 @@ const HeroContainer = styled.div`
       }
     }
 
+    .zipcode-input {
+      &.not-valid {
+        color: red;
+      }
+    }
+
     button {
       padding: 11px;
       border-radius: 0px 5px 5px 0px;
@@ -62,17 +68,38 @@ const HeroContainer = styled.div`
   }
 `
 
-const HeroContent = () => (
-  <LayoutContainer>
-    <HeroContainer>
-      <h1>Discover Bruner Satellite Internet Bundles</h1>
-      <p>Jimmy B is here to make the world a better place. One connection at a time.</p>
-      <div className="zipField">
-        <input type="text" name="zipcode" placeholder="Enter Zip"/>
-        <button>Connect with the Bruner</button>
-      </div>
-    </HeroContainer>
-  </LayoutContainer>
-)
+const checkZip = (e) => {
+
+  const inputtedValue = e.target.value;
+  const valueLength = e.target.value.length;
+  const regex = /(^\d{5}$)/;
+
+  if ( valueLength === 5 ) {
+    if (regex.test(inputtedValue)) {
+      document.querySelector('.zipcode-input').classList.remove('not-valid')
+    } else {
+      document.querySelector('.zipcode-input').classList.add('not-valid')
+    }
+  }
+};
+
+class HeroContent extends React.Component {
+
+  render(){
+    return (
+      <LayoutContainer>
+        <HeroContainer>
+          <h1>Discover Bruner Satellite Internet Bundles</h1>
+          <p>Jimmy B is here to make the world a better place. One connection at a time.</p>
+          <div className="zipField">
+            <input className="zipcode-input" type="text" maxLength="5" name="zipcode" placeholder="Enter Zip" onInput={ (e) => { checkZip(e)} }/>
+            <button>Connect with the Bruner</button>
+          </div>
+        </HeroContainer>
+      </LayoutContainer>
+    )
+  }
+}
+
 
 export default HeroContent

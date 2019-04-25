@@ -9,9 +9,17 @@ const FaqAnswer = styled.div`
   background: #F6F6F6;
   display: none;
 
+  @media screen and (max-width: 830px) {
+    width: 100%;
+  }
+
   p {
     padding: 35px 50px;
     margin: 0;
+
+    @media screen and (max-width: 830px) {
+      padding: 20px;
+    }
   }
 
   &.opened {
@@ -30,6 +38,9 @@ const FaqQuestion = styled.div`
   justify-content: center;
   position: relative;
 
+  @media screen and (max-width: 830px) {
+    width: 100%;
+  }
   &.active {
     .plus-minus-icon {
       span {
@@ -43,6 +54,7 @@ const FaqQuestion = styled.div`
   .question {
     color: #FFF;
     padding-left: 20px;
+    max-width: 80%;
   }
 
   .plus-minus-icon {

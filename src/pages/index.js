@@ -11,8 +11,6 @@ import Equipment from "../components/equipment"
 import FAQ from "../components/faqs"
 import PackageCards from "../components/packages"
 
-
-
 const IndexPage = () => (
   <Layout>
     <SEO title="Bruner Site" keywords={[`gatsby`, `application`, `react`]} />
