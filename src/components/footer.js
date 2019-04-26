@@ -3,7 +3,7 @@ import { LayoutContainer } from "./layout"
 import FooterLogo from '../images/bruner-color-logo.jpg'
 import BgFooter from '../images/bg-footer.jpg'
 import styled from "@emotion/styled"
-
+import {colors} from "../styles/global"
 
 const FooterContent = styled.div`
   width: 30%;
@@ -35,7 +35,7 @@ const FooterContainer = styled.footer`
 
   hr {
     border: none;
-    background-color: #BED733;
+    background-color: ${colors.green};
     height: 2px;
   }
 

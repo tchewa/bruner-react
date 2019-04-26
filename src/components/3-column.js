@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { LayoutContainer } from "../components/layout"
+import {colors} from "../styles/global"
+
 
 
 const ThreeColumnContainer = styled.div`
@@ -17,17 +19,17 @@ const ThreeColumnContainer = styled.div`
 `
 const ColumnItem = styled.div`
   width: 33%;
-  border-left: 3px solid #009FE3;
+  border-left: 3px solid ${colors.blue};
   padding: 0 20px 0 20px;
 
   h3 {
-    color: #009FE3;
+    color: ${colors.blue};
   }
 
   hr {
     display: none;
     border: none;
-    background-color: #009FE3;
+    background-color: ${colors.blue};
     height: 3px;
     width: 75%;
     margin: 5px 0 0;

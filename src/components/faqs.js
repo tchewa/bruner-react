@@ -1,12 +1,14 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { LayoutContainer } from "../components/layout"
+import {colors} from "../styles/global"
+
 
 
 const FaqAnswer = styled.div`
   width: 80%;
   margin: 0 auto;
-  background: #F6F6F6;
+  background: ${colors.lightgray};
   display: none;
 
   @media screen and (max-width: 830px) {
@@ -28,7 +30,7 @@ const FaqAnswer = styled.div`
   `
 
 const FaqQuestion = styled.div`
-  background-color: #009FE3;
+  background-color: ${colors.blue};
   height: 60px;
   width: 80%;
   margin: 20px auto 0;
@@ -52,7 +54,7 @@ const FaqQuestion = styled.div`
   }
 
   .question {
-    color: #FFF;
+    color: ${colors.white};
     padding-left: 20px;
     max-width: 80%;
   }
@@ -61,7 +63,7 @@ const FaqQuestion = styled.div`
     span {
       width: 20px;
       height: 4px;
-      background-color: #FFF;
+      background-color: ${colors.white};
       display: block;
       position: absolute;
       right: 20px;
@@ -90,8 +92,7 @@ const handleClick = (e) => {
     e.currentTarget.classList.toggle('active'),
     e.currentTarget.nextElementSibling.classList.toggle('opened')
   )
-};
-
+}
 
 const FAQ =  () =>
     <FaqContainer>

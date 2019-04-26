@@ -1,6 +1,8 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { LayoutContainer } from "./layout"
+import {colors} from "../styles/global"
+
 
 const HeroContainer = styled.div`
   text-align: center;
@@ -58,8 +60,8 @@ const HeroContainer = styled.div`
     button {
       padding: 11px;
       border-radius: 0px 5px 5px 0px;
-      background-color: #009FE3;
-      color: #fff;
+      background-color: ${colors.blue};
+      color: ${colors.white};
       cursor: pointer;
       width: 50%;
       font-size: 15px;
@@ -70,9 +72,9 @@ const HeroContainer = styled.div`
 
 const checkZip = (e) => {
 
-  const inputtedValue = e.target.value;
-  const valueLength = e.target.value.length;
-  const regex = /(^\d{5}$)/;
+  const inputtedValue = e.target.value
+  const valueLength = e.target.value.length
+  const regex = /(^\d{5}$)/
 
   if ( valueLength === 5 ) {
     if (regex.test(inputtedValue)) {
@@ -81,7 +83,7 @@ const checkZip = (e) => {
       document.querySelector('.zipcode-input').classList.add('not-valid')
     }
   }
-};
+}
 
 class HeroContent extends React.Component {
 

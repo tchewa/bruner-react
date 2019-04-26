@@ -1,6 +1,8 @@
 import React from "react"
 import { LayoutContainer } from "./layout"
 import styled from "@emotion/styled"
+import {colors} from "../styles/global"
+
 
 
 const SideBySideContainer = styled.div`
@@ -11,11 +13,11 @@ const SideBySideContainer = styled.div`
   }
 
   &.white {
-    background-color: #FFF;
+    background-color: ${colors.white};
   }
 
   &.gray {
-    background-color: #F6F6F6;
+    background-color: ${colors.lightgray};
   }
 
   @media screen and (max-width: 830px) {

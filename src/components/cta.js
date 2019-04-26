@@ -1,12 +1,14 @@
 import React from "react"
 import styled from "@emotion/styled"
+import {colors} from "../styles/global"
+
 /* eslint-disable */
 
 
 const CtaContainer = styled.div`
-  background-color: #009FE3;
+  background-color: ${colors.blue};
   text-align: center;
-  color: #fff;
+  color: ${colors.white};
   padding: 30px 20px;
   position: relative;
   &:before {
@@ -16,7 +18,7 @@ const CtaContainer = styled.div`
     top: -10px;
     left: 50%;
     transform: translateX(-50%) rotate(45deg);
-    background-color: #009FE3;
+    background-color: ${colors.blue};
     width: 20px;
     height: 20px;
   }
@@ -36,7 +38,7 @@ const CtaContainer = styled.div`
 
     a {
       text-decoration: none;
-      color: #FFF;
+      color: ${colors.white};
 
       &:hover {
         text-decoration: underline;
@@ -48,13 +50,13 @@ const CtaContainer = styled.div`
     width: 175px;
     height: 50px;
     border-radius: 7px;
-    color: #009FE3;
+    color: ${colors.blue};
     display: block;
     margin: 20px auto;
     box-shadow: 0 3px 15px -3px #3759c1;
 
     &.white {
-      background-color: #FFF;
+      background-color: ${colors.white};
     }
   }
 `

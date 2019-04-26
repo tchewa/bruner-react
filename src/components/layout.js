@@ -10,11 +10,9 @@ import PropTypes from "prop-types"
 import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
-import "./layout.css"
 import styled from "@emotion/styled"
 import  BaseStyles  from "../styles/global"
 import Footer from "./footer"
-
 
 export const LayoutContainer = styled.div`
   max-width: 1000px;

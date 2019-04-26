@@ -8,6 +8,9 @@ import { LayoutContainer } from "../components/layout"
 import Logo from "../images/Bruner-Dynamics-White.png"
 import MobileLogo  from "../images/bruner-color-logo.jpg"
 import HeroContent from "./hero"
+import {colors} from "../styles/global"
+
+
 
 const MainHeader = styled.header`
   background-image: url(${BgStarry});
@@ -22,7 +25,7 @@ const DesktopNav = styled.div`
   align-items: center;
 
   .phone {
-    color: #fff;
+    color: ${colors.white};
   }
 
   @media screen and (max-width: 830px) {
@@ -54,7 +57,7 @@ const MobileNav = styled.header`
       width: 100%;
       left: 0;
       height: 60px;
-      background-color: #fff;
+      background-color: ${colors.white};
     }
 
     .mobile-menu-items {
@@ -63,17 +66,28 @@ const MobileNav = styled.header`
       left: 0;
       right: 0;
       top: 60px;
-      background-color: #FFF;
+      background-color: ${colors.white};
 
       &.opened {
         display: block;
       }
 
-      li {
-        margin-bottom: 10px;
+      ul {
+        margin: 0px;
+        padding: 0px;
       }
+
+      li {
+        margin: 0;
+        padding: 20px;
+        position: relative;
+      }
+
       a {
         text-decoration: none;
+        &:visited {
+          color: ${colors.white}:
+        }
 
         &:hover {
           text-decoration: underline;
@@ -84,35 +98,57 @@ const MobileNav = styled.header`
 
   .hamburger-container {
     display: flex;
-    justify-content: center;
+    justify-content: space-around;
     flex-direction: column;
     width: 30px;
-    height: 20px;
+    height: 17px;
     position: relative;
     cursor: pointer;
     right: 30px;
 
-    &:before {
-      content: "";
+    span {
+      width: 100%;
       height: 3px;
-      background-color: #009FE3;
-      margin-bottom: 4px;
+      background-color: ${colors.blue};
+      position: absolute;
+      transition: .15s;
+      &:first-of-type {
+       top: 0;
+      }
+      &:nth-child(2), &:nth-child(3) {
+        top: 7px
+      }
+      &:last-of-type {
+        bottom: 0;
+      }
     }
 
-    &:after {
-      content: "";
-      height: 3px;
-      background-color: #009FE3;
-      margin-top: 4px;
+    &.mobile-opened {
+      span {
+        &:first-of-type {
+          top: 7px;
+          width: 0%;
+          left: 50%;
+        }
+        &:nth-child(2) {
+          -webkit-transform: rotate(45deg);
+          -moz-transform: rotate(45deg);
+          -o-transform: rotate(45deg);
+          transform: rotate(45deg);
+        }
+        &:nth-child(3) {
+          -webkit-transform: rotate(-45deg);
+          -moz-transform: rotate(-45deg);
+          -o-transform: rotate(-45deg);
+          transform: rotate(-45deg);
+        }
+        &:last-of-type {
+          bottom: 7px;
+          width: 0%;
+          left: 50%;
+        }
+      }
     }
-  }
-
-  .hamburger-menu {
-    width: 30px;
-    height: 3px;
-    background-color: #009FE3;
-    display: block;
-    position: relative;
   }
 `
 
@@ -130,7 +166,7 @@ const NavItems = styled.div`
   }
 
   a {
-    color: #fff;
+    color: ${colors.white};
     text-decoration: none;
 
     &:hover {
@@ -148,9 +184,10 @@ const NavItems = styled.div`
 
 const handleClick = (e) => {
   return (
+    console.log(e.currentTarget.classList.toggle('mobile-opened')),
     e.currentTarget.parentElement.nextElementSibling.classList.toggle('opened')
   )
-};
+}
 
 const Header = () => (
 // class Header extends React.Component{
@@ -188,7 +225,10 @@ const Header = () => (
                   <img src={MobileLogo} alt="logo"/>
                 </Link>
                 <div className="hamburger-container" onClick={ (e) => { return handleClick(e)} }>
-                  <span className="hamburger-menu"></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
+                  <span></span>
                 </div>
               </div>
               <div className="mobile-menu-items">

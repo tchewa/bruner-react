@@ -1,6 +1,16 @@
 import React from "react"
 import { Global, css } from '@emotion/core'
 
+export const colors = {
+  blue: "#009FE3",
+  green: "#99AF21",
+  lightgray: "#F6F6F6",
+  darkergray: "#D8D8D8",
+  darkgray: "#8B8F95",
+  white: "#FFF",
+  black: "#000"
+}
+
 const BaseStyles = () => (
   <Global
   styles={css`

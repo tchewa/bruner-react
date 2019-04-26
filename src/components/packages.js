@@ -5,6 +5,7 @@ import MoneyIcon from "../images/Bits/Icons/money.svg"
 import BellIcon from "../images/Bits/Icons/bell.svg"
 import ClapsIcon from "../images/Bits/Icons/claps.svg"
 import VideoIcon from "../images/Bits/Icons/video.svg"
+import {colors} from "../styles/global"
 
 
 const PackageContainer = styled.div`
@@ -40,11 +41,11 @@ const PackageContainer = styled.div`
 
 const PackageCardItem = styled.div`
   width: 25%;
-  border-left: 3px solid #D1D3D6;
+  border-left: 3px solid ${colors.darkergray};
   padding: 20px 20px 100px;
   position: relative;
   box-sizing: border-box;
-  background-color: #FFF;
+  background-color: ${colors.white};
   transition: .25s;
   height: 500px;
 
@@ -65,7 +66,7 @@ const PackageCardItem = styled.div`
 
   @media screen and (max-width: 830px) {
     width: 100%;
-    box-shadow: 5px 5px 21px 0px #D8D8D8;
+    box-shadow: 5px 5px 21px 0px ${colors.darkergray};
     border-left: none;
     height: auto;
   }
@@ -74,17 +75,17 @@ const PackageCardItem = styled.div`
   &:hover {
     @media screen and (min-width: 1000px) {
       .package-title {
-        color: #99AF21;
+        color: ${colors.green};
       }
       .package-cta {
-        background-color: #99AF21;
+        background-color: ${colors.green};
       }
       .package-title-content {
-        border-bottom: 2px solid #99AF21;
+        border-bottom: 2px solid ${colors.green};
       }
     }
 
-    box-shadow: 5px 5px 21px 0px #D8D8D8;
+    box-shadow: 5px 5px 21px 0px ${colors.darkergray};
     border-left: 3px solid transparent;
     transform: scale(1.07);
     z-index: 5;
@@ -110,7 +111,7 @@ const PackageCardItem = styled.div`
 
 
   .package-title-content {
-    border-bottom: 2px solid #009FE3;
+    border-bottom: 2px solid ${colors.blue};
     margin-bottom: 25px;
     position: relative;
     p {
@@ -149,7 +150,7 @@ const PackageCardItem = styled.div`
       display: block;
       width: 8px;
       height: 8px;
-      border: 2px solid #8B8F95;
+      border: 2px solid ${colors.darkgray};
       position: absolute;
       right: 0;
       border-top: transparent;
@@ -176,7 +177,7 @@ const PackageCardItem = styled.div`
   .package-title {
     text-transform: uppercase;
     font-size: 15px;
-    color: #009FE3;
+    color: ${colors.blue};
   }
 
   .package-price {
@@ -205,11 +206,11 @@ const PackageCardItem = styled.div`
   }
   p {
     margin: 5px 0;
-    color: #8B8F95;
+    color: ${colors.darkgray};
   }
 
   .package-cta {
-    background-color: #009FE3;
+    background-color: ${colors.blue};
     height: 60px;
     position: absolute;
     bottom: 20px;
@@ -217,7 +218,7 @@ const PackageCardItem = styled.div`
     right: 20px;
     border-radius: 0 0 10px 10px;
     text-transform: uppercase;
-    color: #FFF;
+    color: ${colors.white};
     padding: 10px 20px 0;
 
     span {
@@ -238,7 +239,7 @@ const handleClick = (e) => {
     e.currentTarget.classList.toggle('active'),
     e.currentTarget.parentElement.nextElementSibling.classList.toggle('opened')
   )
-};
+}
 
 const PackageCards = () => (
   <PackageContainer>

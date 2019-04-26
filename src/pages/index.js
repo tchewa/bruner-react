@@ -1,7 +1,6 @@
 import React from "react"
 
 import Layout from "../components/layout"
-import SEO from "../components/seo"
 import SideBySide from "../components/side-by-side"
 import ThreeColumn from "../components/3-column"
 import CtaComponent from "../components/cta";
@@ -13,7 +12,6 @@ import PackageCards from "../components/packages"
 
 const IndexPage = () => (
   <Layout>
-    <SEO title="Bruner Site" keywords={[`gatsby`, `application`, `react`]} />
     <PackageCards></PackageCards>
     <SideBySide imgsrc={BrunerDevices} imgalt="Bruner Devices" bgcolor="gray">
         <h2>We're Here to Brand Everything, Everywhere, Anytime</h2>

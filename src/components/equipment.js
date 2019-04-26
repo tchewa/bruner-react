@@ -1,10 +1,11 @@
 import React from "react"
 import styled from "@emotion/styled"
 import { LayoutContainer } from "../components/layout"
+import {colors} from "../styles/global"
 
 
 const EquipmentContainer = styled.div`
-  background-color: #F6F6F6;
+  background-color: ${colors.lightgray};
   text-align: center;
   padding: 30px 20px 70px;
 
@@ -33,7 +34,7 @@ const EquipmentContainer = styled.div`
 
 const EquipmentItem = styled.div`
   width: 48%;
-  background-color: #FFF;
+  background-color: ${colors.white};
   border-radius: 10px;
   box-shadow: 0 4px 10px #A9A9A9;
 
@@ -53,8 +54,8 @@ const EquipmentItem = styled.div`
   }
 
   .equipment-name {
-    background-color: #009FE3;
-    color: #FFF;
+    background-color: ${colors.blue};
+    color: ${colors.white};
     display: block;
     padding: 15px 20px;
     text-align: left;
