@@ -2,147 +2,131 @@ import React from "react"
 import styled from "@emotion/styled"
 import { LayoutContainer } from "../components/layout"
 import {colors} from "../styles/global"
+import {faqs} from "../data/faqs.json"
 
+const FaqItem = styled.div`
 
-
-const FaqAnswer = styled.div`
-  width: 80%;
-  margin: 0 auto;
-  background: ${colors.lightgray};
-  display: none;
-
-  @media screen and (max-width: 830px) {
-    width: 100%;
-  }
-
-  p {
-    padding: 35px 50px;
-    margin: 0;
+  .faq-question {
+    background-color: ${colors.blue};
+    height: 60px;
+    width: 80%;
+    margin: 20px auto 0;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    position: relative;
 
     @media screen and (max-width: 830px) {
-      padding: 20px;
+      width: 100%;
     }
-  }
 
-  &.opened {
-    display: block;
-  }
-  `
+    &.active {
 
-const FaqQuestion = styled.div`
-  background-color: ${colors.blue};
-  height: 60px;
-  width: 80%;
-  margin: 20px auto 0;
-  cursor: pointer;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
+      .plus-minus-icon {
 
-  @media screen and (max-width: 830px) {
-    width: 100%;
-  }
-  &.active {
+        span {
+
+          &:last-of-type {
+            transform: rotate(1440deg);
+          }
+        }
+      }
+    }
+
+    .question {
+      color: ${colors.white};
+      padding-left: 20px;
+      max-width: 80%;
+    }
+
     .plus-minus-icon {
+
       span {
+        width: 20px;
+        height: 4px;
+        background-color: ${colors.white};
+        display: block;
+        position: absolute;
+        right: 20px;
+        top: 50%;
+        transform: translateY(-50%);
+        transition: .25s;
+
         &:last-of-type {
-          transform: rotate(1440deg);
+          transform: rotate(-90deg);
+          top: 28px;
         }
       }
     }
   }
 
-  .question {
-    color: ${colors.white};
-    padding-left: 20px;
-    max-width: 80%;
-  }
+  .faq-answer {
+    width: 80%;
+    margin: 0 auto;
+    background: ${colors.lightgray};
+    display: none;
 
-  .plus-minus-icon {
-    span {
-      width: 20px;
-      height: 4px;
-      background-color: ${colors.white};
-      display: block;
-      position: absolute;
-      right: 20px;
-      top: 50%;
-      transform: translateY(-50%);
-      transition: .25s;
+    @media screen and (max-width: 830px) {
+      width: 100%;
+    }
 
-      &:last-of-type {
-        transform: rotate(-90deg);
-        top: 28px;
+    p {
+      padding: 35px 50px;
+      margin: 0;
+
+      @media screen and (max-width: 830px) {
+        padding: 20px;
       }
     }
-  }
-  `
 
-  const FaqContainer = styled.div`
-    padding: 30px 20px 70px;
-
-    .section-title {
-      margin-bottom: 50px;
+    &.opened {
+      display: block;
     }
+  }
+`
 
-  `
+const FaqContainer = styled.div`
+  padding: 30px 20px 70px;
+
+  .section-title {
+    margin-bottom: 50px;
+  }
+`
+
 const handleClick = (e) => {
   return (
+    console.log(e.currentTarget),
     e.currentTarget.classList.toggle('active'),
     e.currentTarget.nextElementSibling.classList.toggle('opened')
   )
 }
 
-const FAQ =  () =>
+const FAQ = () => {
+
+  const displayFaqs = faqs.map((faq) =>
+    <FaqItem className="faq-item">
+      <div className="faq-question" onClick={ (e) => { return handleClick(e)} }>
+        <span className="question">{faq.question}</span>
+        <div className="plus-minus-icon">
+          <span></span>
+          <span></span>
+        </div>
+      </div>
+      <div className="faq-answer">
+        <p>{faq.answer}</p>
+      </div>
+    </FaqItem>
+  )
+
+  return (
     <FaqContainer>
-    <LayoutContainer>
-      <h2 className="section-title">Bruner Dynamics FAQs</h2>
-      <FaqQuestion className="faq-question" onClick={ (e) => { return handleClick(e)} }>
-        <span className="question">Is James listening to my conversation?</span>
-        <div className="plus-minus-icon">
-          <span></span>
-          <span></span>
-        </div>
-      </FaqQuestion>
-      <FaqAnswer>
-        <p>Brüner Dynamics is commited to privacy, autonomy, transparency, and idiosyncrasies. In order to maintain our high standard of product, James reserves the right to listen in to conversations in your home. In exceptional circumstances, we reserve the right to have James join your conversation with a really great zinger, joke, quip, or comeback.</p>
-      </FaqAnswer>
-      <FaqQuestion className="faq-question" onClick={ (e) => { return handleClick(e)} }>
-        <span className="question">Why should I get Bruner Dynamics?</span>
-        <div className="plus-minus-icon">
-          <span></span>
-          <span></span>
-        </div>
-      </FaqQuestion>
-      <FaqAnswer>
-        <p>Remember when you were a kid in the 80’s and you were obsessed with space and the future? Well, the future is upon us. We’re still waiting for a nuclear-powered flying Delorean that runs on refuse, but we do have satellites. Hi-tech space craft orbiting our planet, beaming down cat videos to an adoring public. Like the majestic Millennium Falcon from long ago, Brüner Dynamics will put you in touch with the future with a bad-ass satellite dish mounted directly onto your house. “Rogue Two checking in.”</p>
-      </FaqAnswer>
-      <FaqQuestion className="faq-question" onClick={ (e) => { return handleClick(e)} }>
-        <span className="question">Who is the guy who keeps walking in front of my place? Is that Ralph?</span>
-        <div className="plus-minus-icon">
-          <span></span>
-          <span></span>
-        </div>
-      </FaqQuestion>
-      <FaqAnswer>
-        <p>Ralph doesn’t believe in GPS, so he locates the homes where he performs dish installations via a complicated combination of smell, instinct,  a divining rod, quantum mathematics, and a form of West African witchcraft. If you hear a strange, oddly-loud humming noise, and you look out the window and see a man with a hand-crafted robo-helmet in your front yard, you have likely been found by Ralph.</p>
-      </FaqAnswer>
-      <FaqQuestion className="faq-question" onClick={ (e) => { return handleClick(e)} }>
-        <span className="question">Where does space start?</span>
-        <div className="plus-minus-icon">
-          <span></span>
-          <span></span>
-        </div>
-      </FaqQuestion>
-      <FaqAnswer>
-        <p>An excellent question. At Bruner Dynamics, we generally see space as any matter, atmosphere, or void not currently occupied by James Bruner. Therefore, space starts and ends with Mr. Bruner.</p>
-      </FaqAnswer>
-    </LayoutContainer>
-  </FaqContainer>
+      <LayoutContainer>
+        <h2 className="section-title">Bruner Dynamics FAQs</h2>
+        {displayFaqs}
+      </LayoutContainer>
+    </FaqContainer>
+  )
+}
 
-
-
-
-
-  export default FAQ
+export default FAQ

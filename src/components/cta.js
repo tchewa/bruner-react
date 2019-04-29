@@ -3,14 +3,13 @@ import styled from "@emotion/styled"
 import {colors} from "../styles/global"
 
 /* eslint-disable */
-
-
 const CtaContainer = styled.div`
   background-color: ${colors.blue};
   text-align: center;
   color: ${colors.white};
   padding: 30px 20px;
   position: relative;
+
   &:before {
     content: "";
     display: block;
@@ -24,6 +23,7 @@ const CtaContainer = styled.div`
   }
 
   .desktop-cta {
+
     @media screen and (max-width: 600px) {
       display: none;
     }

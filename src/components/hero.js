@@ -52,6 +52,7 @@ const HeroContainer = styled.div`
     }
 
     .zipcode-input {
+
       &.not-valid {
         color: red;
       }

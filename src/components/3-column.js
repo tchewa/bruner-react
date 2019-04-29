@@ -2,7 +2,7 @@ import React from "react"
 import styled from "@emotion/styled"
 import { LayoutContainer } from "../components/layout"
 import {colors} from "../styles/global"
-
+import {columns} from "../data/columns.json"
 
 
 const ThreeColumnContainer = styled.div`
@@ -46,27 +46,22 @@ const ColumnItem = styled.div`
   }
 `
 
-const ThreeColumn = () => (
-  <ThreeColumnContainer>
-    <h2 className="section-title">It Is Possible To Pay Us More <br/> Money</h2>
-    <LayoutContainer className="three-column">
-      <ColumnItem>
-        <h3>Easy Care</h3>
-        <hr/>
-        <p>For only $5.99/mo, you can get priority customer support with annual dish relocation, free service calls, and a priority hotline which connects straight to Jimmy’s Pager – faster than a Led Zeppelin guitar solo.  Plus, you can add or cancel Easy Care at anytime. </p>
-      </ColumnItem>
-      <ColumnItem>
-        <h3>Voice</h3>
-        <hr/>
-        <p>The industry term for digital phone service is VoIP. We want to mention VoIP here a few times so that we sound legit and you will forefit your dollars to us. Voice is the only VoIP connection that doesn’t subtract from your internet data allowing more time for Strongbad emails and Battlestar Galactica chat rooms.</p>
-      </ColumnItem>
-      <ColumnItem>
-        <h3>DIRECTV</h3>
-        <hr/>
-        <p>If you can get Brüner at your home, you can get DIRECTV and vice versa. If you can get water in your home, you can quench your thirst and take baths. There is a hypothetical situation where you can take a bath, stream patriotic tunes, watch DIRECTV, and quench your thirst all at the same time.</p>
-      </ColumnItem>
-    </LayoutContainer>
-  </ThreeColumnContainer>
-)
+const ThreeColumn = () => {
+
+  const displayColumns = columns.map((column) =>
+    <ColumnItem>
+      <h3>{column.title}</h3>
+      <p>{column.columnContent}</p>
+    </ColumnItem>
+  )
+
+  return (
+    <ThreeColumnContainer>
+      <LayoutContainer className="three-column">
+        {displayColumns}
+      </LayoutContainer>
+    </ThreeColumnContainer>
+  )
+}
 
 export default ThreeColumn

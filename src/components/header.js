@@ -37,6 +37,7 @@ const MobileNav = styled.header`
   display: none;
 
   .mobile-logo {
+
     img {
       width: 100px;
       margin-left: 30px;
@@ -85,6 +86,7 @@ const MobileNav = styled.header`
 
       a {
         text-decoration: none;
+
         &:visited {
           color: ${colors.white}:
         }
@@ -112,36 +114,44 @@ const MobileNav = styled.header`
       background-color: ${colors.blue};
       position: absolute;
       transition: .15s;
+
       &:first-of-type {
        top: 0;
       }
+
       &:nth-child(2), &:nth-child(3) {
         top: 7px
       }
+
       &:last-of-type {
         bottom: 0;
       }
     }
 
     &.mobile-opened {
+
       span {
+
         &:first-of-type {
           top: 7px;
           width: 0%;
           left: 50%;
         }
+
         &:nth-child(2) {
           -webkit-transform: rotate(45deg);
           -moz-transform: rotate(45deg);
           -o-transform: rotate(45deg);
           transform: rotate(45deg);
         }
+
         &:nth-child(3) {
           -webkit-transform: rotate(-45deg);
           -moz-transform: rotate(-45deg);
           -o-transform: rotate(-45deg);
           transform: rotate(-45deg);
         }
+
         &:last-of-type {
           bottom: 7px;
           width: 0%;
@@ -190,61 +200,50 @@ const handleClick = (e) => {
 }
 
 const Header = () => (
-// class Header extends React.Component{
 
-//   componentDidMount() {
-//     const mobileMenu = document.querySelector('.mobile-menu-items'),
-//     mobileNavHeight = mobileMenu.clientHeight;
-
-//     mobileMenu.style.top = "-" + mobileNavHeight
-//   }
-
-//   render(){
-
-//     return (
-      <div className="navigation">
-        <MainHeader>
-          <LayoutContainer>
-            <DesktopNav>
-              <NavItems>
-                <Link className="logo" to="/">
-                  <img src={Logo} alt="logo"/>
-                </Link>
-                <ul>
-                  <li><Link to="/">Plans</Link></li>
-                  <li><Link to="/">Speeds</Link></li>
-                  <li><Link to="/">About Bruner Dynamics</Link></li>
-                  <li><Link to="/">Equipment</Link></li>
-                </ul>
-              </NavItems>
-              <span className="phone">Call Now: 1.888.888.8888</span>
-            </DesktopNav>
-            <MobileNav>
-              <div className="mobile-nav-container">
-                <Link className="mobile-logo" to="/">
-                  <img src={MobileLogo} alt="logo"/>
-                </Link>
-                <div className="hamburger-container" onClick={ (e) => { return handleClick(e)} }>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                  <span></span>
-                </div>
-              </div>
-              <div className="mobile-menu-items">
-                <ul>
-                  <li><Link to="/">Plans</Link></li>
-                  <li><Link to="/">Speeds</Link></li>
-                  <li><Link to="/">About Bruner Dynamics</Link></li>
-                  <li><Link to="/">Equipment</Link></li>
-                </ul>
-              </div>
-            </MobileNav>
-          </LayoutContainer>
-          <HeroContent></HeroContent>
-        </MainHeader>
-      </div>
-    )
+  <div className="navigation">
+    <MainHeader>
+      <LayoutContainer>
+        <DesktopNav>
+          <NavItems>
+            <Link className="logo" to="/">
+              <img src={Logo} alt="logo"/>
+            </Link>
+            <ul>
+              <li><Link to="/">Plans</Link></li>
+              <li><Link to="/">Speeds</Link></li>
+              <li><Link to="/">About Bruner Dynamics</Link></li>
+              <li><Link to="/">Equipment</Link></li>
+            </ul>
+          </NavItems>
+          <span className="phone">Call Now: 1.888.888.8888</span>
+        </DesktopNav>
+        <MobileNav>
+          <div className="mobile-nav-container">
+            <Link className="mobile-logo" to="/">
+              <img src={MobileLogo} alt="logo"/>
+            </Link>
+            <div className="hamburger-container" onClick={ (e) => { return handleClick(e)} }>
+              <span></span>
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </div>
+          <div className="mobile-menu-items">
+            <ul>
+              <li><Link to="/">Plans</Link></li>
+              <li><Link to="/">Speeds</Link></li>
+              <li><Link to="/">About Bruner Dynamics</Link></li>
+              <li><Link to="/">Equipment</Link></li>
+            </ul>
+          </div>
+        </MobileNav>
+      </LayoutContainer>
+      <HeroContent></HeroContent>
+    </MainHeader>
+  </div>
+)
 
 
 

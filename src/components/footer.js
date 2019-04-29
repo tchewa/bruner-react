@@ -43,6 +43,7 @@ const FooterContainer = styled.footer`
     font-size: 24px;
     font-weight: 100;
   }
+
   span {
     display: block;
     padding-top: 20px;

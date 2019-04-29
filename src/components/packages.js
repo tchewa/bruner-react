@@ -14,6 +14,7 @@ const PackageContainer = styled.div`
   @media screen and (max-width: 830px) {
     padding: 30px 20px;
   }
+
   .four-column {
     display: flex;
 
@@ -21,13 +22,16 @@ const PackageContainer = styled.div`
       flex-wrap: wrap;
     }
   }
+
   .disclaimers {
     max-width: 35%;
     margin: 50px auto;
+
     span {
       display: block;
       margin-bottom: 15px;
     }
+
     @media screen and (max-width: 1200px) {
       max-width: 100%;
       margin: 20px auto 0;
@@ -50,6 +54,7 @@ const PackageCardItem = styled.div`
   height: 500px;
 
   .package-details {
+
     @media screen and (max-width: 830px) {
       display: none;
 
@@ -73,13 +78,17 @@ const PackageCardItem = styled.div`
 
 
   &:hover {
+
     @media screen and (min-width: 1000px) {
+
       .package-title {
         color: ${colors.green};
       }
+
       .package-cta {
         background-color: ${colors.green};
       }
+
       .package-title-content {
         border-bottom: 2px solid ${colors.green};
       }
@@ -114,6 +123,7 @@ const PackageCardItem = styled.div`
     border-bottom: 2px solid ${colors.blue};
     margin-bottom: 25px;
     position: relative;
+
     p {
       margin-bottom: 20px;
     }
@@ -126,18 +136,22 @@ const PackageCardItem = styled.div`
     top: 0;
     cursor: pointer;
     padding-right: 20px;
+
     p {
       margin: 0;
     }
 
     &.active {
+
       .see-more {
         display: none;
       }
+
       .see-less {
         display: block;
       }
     }
+
     @media screen and (max-width: 830px) {
       display: block;
     }
@@ -145,6 +159,7 @@ const PackageCardItem = styled.div`
 
   .see-more,
   .see-less {
+
     &:after {
       content: "";
       display: block;
@@ -160,6 +175,7 @@ const PackageCardItem = styled.div`
 
   .see-more {
     display: block;
+
     &:after {
       top: 3px;
       transform: rotate(45deg);
@@ -168,6 +184,7 @@ const PackageCardItem = styled.div`
 
   .see-less {
     display: none;
+
     &:after {
       transform: rotate(-135deg);
       top: 7px;
@@ -204,6 +221,7 @@ const PackageCardItem = styled.div`
       top: 5px;
     }
   }
+
   p {
     margin: 5px 0;
     color: ${colors.darkgray};
