@@ -59,6 +59,8 @@ const MobileNav = styled.header`
       left: 0;
       height: 60px;
       background-color: ${colors.white};
+      z-index: 2;
+      box-shadow: 2px 2px 10px 2px ${colors.darkestgray};
     }
 
     .mobile-menu-items {
@@ -82,18 +84,28 @@ const MobileNav = styled.header`
         margin: 0;
         padding: 20px;
         position: relative;
+        font-size: 25px;
+
+        &:hover {
+          background-color: ${colors.blue};
+          cursor: pointer;
+          a {
+            color: ${colors.white};
+          }
+        }
       }
 
       a {
+        color: ${colors.blue};
         text-decoration: none;
 
         &:visited {
           color: ${colors.white}:
         }
 
-        &:hover {
+        /* &:hover {
           text-decoration: underline;
-        }
+        } */
       }
     }
   }
