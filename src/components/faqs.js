@@ -87,7 +87,6 @@ const FaqItem = styled.div`
 `
 
 const FaqContainer = styled.div`
-  padding: 30px 20px 70px;
 
   .section-title {
     margin-bottom: 50px;
@@ -104,8 +103,8 @@ const handleClick = (e) => {
 
 const FAQ = () => {
 
-  const displayFaqs = faqs.map((faq) =>
-    <FaqItem className="faq-item">
+  const displayFaqs = faqs.map((faq, i) =>
+    <FaqItem className="faq-item" key={i}>
       <div className="faq-question" onClick={ (e) => { return handleClick(e)} }>
         <span className="question">{faq.question}</span>
         <div className="plus-minus-icon">
@@ -120,7 +119,7 @@ const FAQ = () => {
   )
 
   return (
-    <FaqContainer>
+    <FaqContainer className="main-container">
       <LayoutContainer>
         <h2 className="section-title">Bruner Dynamics FAQs</h2>
         {displayFaqs}

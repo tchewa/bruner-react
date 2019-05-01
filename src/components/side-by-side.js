@@ -6,11 +6,7 @@ import {colors} from "../styles/global"
 
 
 const SideBySideContainer = styled.div`
-  padding: 100px 0;
-
-  @media screen and (max-width: 1000px) {
-    padding: 30px 20px 70px;
-  }
+  padding-top: 70px;
 
   &.white {
     background-color: ${colors.white};
@@ -61,7 +57,7 @@ const SideBySideContainer = styled.div`
 `
 
 const SideBySide = ({children, imgsrc, imgalt, bgcolor}) => (
-  <SideBySideContainer className={bgcolor}>
+  <SideBySideContainer className={bgcolor + " main-container"}>
     <LayoutContainer className="side-by-side">
       <div className="half-width left-content">
         <img src={imgsrc} alt={imgalt}/>

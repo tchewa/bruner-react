@@ -15,8 +15,6 @@ import {colors} from "../styles/global"
 const MainHeader = styled.header`
   background-image: url(${BgStarry});
   background-size: cover;
-  padding: 30px 20px 70px;
-
 `
 
 const DesktopNav = styled.div`
@@ -89,6 +87,7 @@ const MobileNav = styled.header`
         &:hover {
           background-color: ${colors.blue};
           cursor: pointer;
+
           a {
             color: ${colors.white};
           }
@@ -97,7 +96,6 @@ const MobileNav = styled.header`
 
       a {
         color: ${colors.blue};
-        text-decoration: none;
 
         &:visited {
           color: ${colors.white}:
@@ -131,7 +129,7 @@ const MobileNav = styled.header`
        top: 0;
       }
 
-      &:nth-child(2), &:nth-child(3) {
+      &:nth-of-type(2), &:nth-of-type(3) {
         top: 7px
       }
 
@@ -141,7 +139,7 @@ const MobileNav = styled.header`
     }
 
     &.mobile-opened {
-      /* test */
+
       span {
 
         &:first-of-type {
@@ -150,14 +148,14 @@ const MobileNav = styled.header`
           left: 50%;
         }
 
-        &:nth-child(2) {
+        &:nth-of-type(2) {
           -webkit-transform: rotate(45deg);
           -moz-transform: rotate(45deg);
           -o-transform: rotate(45deg);
           transform: rotate(45deg);
         }
 
-        &:nth-child(3) {
+        &:nth-of-type(3) {
           -webkit-transform: rotate(-45deg);
           -moz-transform: rotate(-45deg);
           -o-transform: rotate(-45deg);
@@ -189,7 +187,6 @@ const NavItems = styled.div`
 
   a {
     color: ${colors.white};
-    text-decoration: none;
 
     &:hover {
       text-decoration: underline;
@@ -198,6 +195,7 @@ const NavItems = styled.div`
 
   .logo {
     width: 150px;
+
     img {
       width: 100%;
     }
@@ -214,7 +212,7 @@ const handleClick = (e) => {
 const Header = () => (
 
   <div className="navigation">
-    <MainHeader>
+    <MainHeader className="main-container">
       <LayoutContainer>
         <DesktopNav>
           <NavItems>

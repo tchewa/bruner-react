@@ -85,7 +85,6 @@ const MobileNav = styled.header`
       }
 
       a {
-        text-decoration: none;
 
         &:visited {
           color: ${colors.white}:
@@ -119,7 +118,7 @@ const MobileNav = styled.header`
        top: 0;
       }
 
-      &:nth-child(2), &:nth-child(3) {
+      &:nth-of-type(2), &:nth-of-type(3) {
         top: 7px
       }
 
@@ -138,14 +137,14 @@ const MobileNav = styled.header`
           left: 50%;
         }
 
-        &:nth-child(2) {
+        &:nth-of-type(2) {
           -webkit-transform: rotate(45deg);
           -moz-transform: rotate(45deg);
           -o-transform: rotate(45deg);
           transform: rotate(45deg);
         }
 
-        &:nth-child(3) {
+        &:nth-of-type(3) {
           -webkit-transform: rotate(-45deg);
           -moz-transform: rotate(-45deg);
           -o-transform: rotate(-45deg);
@@ -177,7 +176,6 @@ const NavItems = styled.div`
 
   a {
     color: ${colors.white};
-    text-decoration: none;
 
     &:hover {
       text-decoration: underline;

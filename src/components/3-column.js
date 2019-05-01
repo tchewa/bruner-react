@@ -6,7 +6,13 @@ import {columns} from "../data/columns.json"
 
 
 const ThreeColumnContainer = styled.div`
-  padding: 30px 20px 70px;
+
+  @media screen and (max-width: 600px) {
+
+    br {
+      display: none;
+    }
+  }
 
   .three-column {
     display: flex;
@@ -14,6 +20,10 @@ const ThreeColumnContainer = styled.div`
 
     @media screen and (max-width: 600px) {
       flex-wrap: wrap;
+
+      br {
+        display: none;
+      }
     }
   }
 `
@@ -48,15 +58,17 @@ const ColumnItem = styled.div`
 
 const ThreeColumn = () => {
 
-  const displayColumns = columns.map((column) =>
-    <ColumnItem>
+  const displayColumns = columns.map((column, i) =>
+    <ColumnItem key={i}>
       <h3>{column.title}</h3>
+      <hr/>
       <p>{column.columnContent}</p>
     </ColumnItem>
   )
 
   return (
-    <ThreeColumnContainer>
+    <ThreeColumnContainer className="main-container">
+      <h2 className="section-title">It is Possible to Pay Us More <br/> Money</h2>
       <LayoutContainer className="three-column">
         {displayColumns}
       </LayoutContainer>

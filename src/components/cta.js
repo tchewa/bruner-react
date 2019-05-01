@@ -7,8 +7,8 @@ const CtaContainer = styled.div`
   background-color: ${colors.blue};
   text-align: center;
   color: ${colors.white};
-  padding: 30px 20px;
   position: relative;
+  padding: 30px 20px;
 
   &:before {
     content: "";
@@ -27,6 +27,14 @@ const CtaContainer = styled.div`
     @media screen and (max-width: 600px) {
       display: none;
     }
+
+    button {
+      font-size: 15px;
+
+      &:hover {
+        box-shadow: 0px 5px 15px 1px #2f2f2f;
+      }
+    }
   }
 
   .mobile-cta {
@@ -37,7 +45,6 @@ const CtaContainer = styled.div`
     }
 
     a {
-      text-decoration: none;
       color: ${colors.white};
 
       &:hover {
@@ -62,7 +69,7 @@ const CtaContainer = styled.div`
 `
 
 const CtaComponent = () => (
-  <CtaContainer>
+  <CtaContainer className="main-container">
     <div className="desktop-cta">
       <h2 className="section-title">Get Connected With Bruner Dynamics Today.</h2>
       <button className="btn white">Call 1.888.888.8888</button>

@@ -21,36 +21,48 @@ const BaseStyles = () => (
     padding: 0;
     font-family: Maven Pro, Helvetica Neue, sans-serif;
   }
+
+  a {
+    text-decoration: none;
+  }
+
   button {
     cursor: pointer;
   }
+
   button, input {
     margin: 0px;
     padding: 0px;
     border: none;
   }
+
   p {
     line-height: 1.25em;
   }
+
   h2 {
     font-size: 36px;
     font-weight: 400;
     margin: 0px;
   }
+
   h3 {
     margin: 0px;
     font-size: 24px;
     font-weight: 400;
   }
+
   h4 {
     margin: 0;
     font-size: 20px;
     font-weight: 400;
   }
+
   li {
     list-style-type: none;
     line-height: 1.25em;
   }
+
   .section-title {
     text-align: center;
     margin: 20px auto;
@@ -60,9 +72,14 @@ const BaseStyles = () => (
       margin-top: 0;
     }
   }
+
   .disclaimers {
     font-size: 10px;
     color: #7D8086;
+  }
+
+  .main-container {
+    padding: 30px 20px 70px;
   }
   `}
 />

@@ -2,12 +2,12 @@ import React from "react"
 import styled from "@emotion/styled"
 import { LayoutContainer } from "../components/layout"
 import {colors} from "../styles/global"
+import {products} from "../data/products.json"
 
 
 const EquipmentContainer = styled.div`
   background-color: ${colors.lightgray};
   text-align: center;
-  padding: 30px 20px 70px;
 
   @media screen and (max-width: 830px) {
     text-align: left;
@@ -20,6 +20,10 @@ const EquipmentContainer = styled.div`
     @media screen and (max-width: 830px) {
       max-width: 100%;
     }
+  }
+
+  .item-container {
+    flex-wrap: wrap;
   }
 
   .flex {
@@ -37,6 +41,7 @@ const EquipmentItem = styled.div`
   background-color: ${colors.white};
   border-radius: 10px;
   box-shadow: 0 4px 10px #A9A9A9;
+  margin-bottom: 40px;
 
   @media screen and (max-width: 600px) {
     width: 100%;
@@ -53,7 +58,7 @@ const EquipmentItem = styled.div`
     }
   }
 
-  .equipment-name {
+  .product-name {
     background-color: ${colors.blue};
     color: ${colors.white};
     display: block;
@@ -64,25 +69,27 @@ const EquipmentItem = styled.div`
   }
 `
 
-const Equipment = () => (
-  <EquipmentContainer>
-    <LayoutContainer>
-      <h2 className="section-title">Equipment</h2>
-      <p>When you sign up for Brüner Dynamics, we make it easy to get connected. We’ll send a professional technician named Ralph to install your new dish in an optimal location and set up your wifi router inside your home. </p>
+const Equipment = () => {
 
-      <div className="item-container flex">
-        <EquipmentItem>
-          <span className="equipment-name">Bruner Satellite Dish</span>
-          <p>To access Brüner you’ll need a Brüner Satellite Dish. Jimmy’s cousin Ralph will test for the best installation location and install the dish on your abode. He’ll probably stay for dinner.</p>
-        </EquipmentItem>
-        <EquipmentItem>
-          <span className="equipment-name">Bruner Wi-Fi Modem</span>
-          <p>The Brüner WiFi Modem gives you wireless internet throughout your home. It also includes a Voice service adapter so we can listen and see if anything cool is happening at your place. </p>
-        </EquipmentItem>
-      </div>
+  const displayProducts = products.map((product, i) =>
+    <EquipmentItem key={i}>
+      <span className="product-name">{product.name}</span>
+      <p>{product.description}</p>
+    </EquipmentItem>
+  )
 
-    </LayoutContainer>
-  </EquipmentContainer>
-)
+  return (
+    <EquipmentContainer className="main-container">
+      <LayoutContainer>
+        <h2 className="section-title">Equipment</h2>
+        <p>When you sign up for Brüner Dynamics, we make it easy to get connected. We’ll send a professional technician named Ralph to install your new dish in an optimal location and set up your wifi router inside your home. </p>
+        <div className="item-container flex">
+          {displayProducts}
+        </div>
+
+      </LayoutContainer>
+    </EquipmentContainer>
+  )
+}
 
 export default Equipment

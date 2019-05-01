@@ -1,0 +1,77 @@
+{
+  "packageCards": [
+    {
+      "title": "Pamantha",
+      "price": "50",
+      "discount": "$5/mo after we're best friends",
+      "feature-one": "Free Change",
+      "feature-one-icon": "money.svg",
+      "feature-one-alt": "Money",
+      "feature-one-description": "Need to break a $20? We can help.",
+      "feature-two": "Service Video Suggestions",
+      "feature-two-icon": "video.svg",
+      "feature-two-alt": "Video",
+      "feature-two-description": "We'll send you hilarious youtube clips.",
+      "feature-three": "Complimentary Claps",
+      "feature-three-icon": "claps.svg",
+      "feature-three-alt": "Claps",
+      "feature-three-description": "Included at no additional cost.",
+      "cta-text": "Order the pamantha"
+    },
+    {
+      "title": "el ten eleven",
+      "price": "50",
+      "discount": "$5/mo after we're best friends",
+      "feature-one": "Patriotic Media",
+      "feature-one-icon": "video.svg",
+      "feature-one-alt": "Video",
+      "feature-one-description": "Consume any patriotic content for free.*",
+      "feature-two": "Jurassic Park Channel",
+      "feature-two-icon": "video.svg",
+      "feature-two-alt": "Video",
+      "feature-two-description": "Channel 345 plays Jurassic Park all day.",
+      "feature-three": "Chip Bag Service",
+      "feature-three-icon": "claps.svg",
+      "feature-three-alt": "Claps",
+      "feature-three-description": "Stubborn bag of chips? We can help.",
+      "cta-text": "Select el ten eleven"
+    },
+    {
+      "title": "st. jimmys special",
+      "price": "50",
+      "discount": "$5/mo after we're best friends",
+      "feature-one": "Raft Jousing Channel",
+      "feature-one-icon": "video.svg",
+      "feature-one-alt": "Video",
+      "feature-one-description": "Catch all the RJA action in one place.",
+      "feature-two": "Reptile Disease Network",
+      "feature-two-icon": "money.svg",
+      "feature-two-alt": "Money",
+      "feature-two-description": "Snakes with warts? Look no further.",
+      "feature-three": "Broken Faucet Repair",
+      "feature-three-icon": "bell.svg",
+      "feature-three-alt": "Bell",
+      "feature-three-description": "Anytime day or night. **",
+      "cta-text": "become enlightened"
+    },
+    {
+      "title": "cult hero classic",
+      "price": "50",
+      "discount": "$5/mo after we're best friends",
+      "feature-one": "Gaming Currency",
+      "feature-one-icon": "money.svg",
+      "feature-one-alt": "Money",
+      "feature-one-description": "We now accept Mario and Sonic coins.",
+      "feature-two": "Landline Service",
+      "feature-two-icon": "bell.svg",
+      "feature-two-alt": "Bell",
+      "feature-two-description": "Crystal clear calls to Grandma.",
+      "feature-three": "Shuttlecock Recovery",
+      "feature-three-icon": "claps.svg",
+      "feature-three-alt": "Claps",
+      "feature-three-description": "We will retrieve stray shuttlecocks at your next badminton match.†",
+      "cta-text": "join the cult"
+    }
+
+  ]
+}
