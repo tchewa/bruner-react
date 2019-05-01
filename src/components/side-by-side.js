@@ -30,6 +30,7 @@ const SideBySideContainer = styled.div`
 
   .half-width {
     width: 50%;
+    padding: 0 20px;
 
     @media screen and (max-width: 830px) {
       width: 100%;

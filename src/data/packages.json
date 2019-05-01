@@ -2,7 +2,7 @@
   "packageCards": [
     {
       "title": "Pamantha",
-      "price": "50",
+      "price": "30",
       "discount": "$5/mo after we're best friends",
       "feature-one": "Free Change",
       "feature-one-icon": "money.svg",
@@ -21,7 +21,7 @@
     {
       "title": "el ten eleven",
       "price": "50",
-      "discount": "$5/mo after we're best friends",
+      "discount": "$700/mo after you're officially rich",
       "feature-one": "Patriotic Media",
       "feature-one-icon": "video.svg",
       "feature-one-alt": "Video",
@@ -38,8 +38,8 @@
     },
     {
       "title": "st. jimmys special",
-      "price": "50",
-      "discount": "$5/mo after we're best friends",
+      "price": "70",
+      "discount": "$11/mo after you've proven worthy",
       "feature-one": "Raft Jousing Channel",
       "feature-one-icon": "video.svg",
       "feature-one-alt": "Video",
@@ -56,8 +56,8 @@
     },
     {
       "title": "cult hero classic",
-      "price": "50",
-      "discount": "$5/mo after we're best friends",
+      "price": "100",
+      "discount": "-$1/mo after you demonstrate loyalty",
       "feature-one": "Gaming Currency",
       "feature-one-icon": "money.svg",
       "feature-one-alt": "Money",

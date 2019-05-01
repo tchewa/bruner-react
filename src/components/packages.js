@@ -20,7 +20,7 @@ const PackageContainer = styled.div`
   }
 
   .disclaimers {
-    max-width: 35%;
+    max-width: 700px;
     margin: 50px auto;
 
     span {
@@ -120,6 +120,7 @@ const PackageCardItem = styled.div`
     border-bottom: 2px solid ${colors.blue};
     margin-bottom: 25px;
     position: relative;
+    height: 115px;
 
     p {
       margin-bottom: 20px;
