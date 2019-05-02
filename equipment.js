@@ -72,11 +72,11 @@ const Equipment = () => (
 
       <div className="item-container flex">
         <EquipmentItem>
-          <span className="equipment-name">Bruner Satellite Dish</span>
+          <span className="equipment-name">Brüner Satellite Dish</span>
           <p>To access Brüner you’ll need a Brüner Satellite Dish. Jimmy’s cousin Ralph will test for the best installation location and install the dish on your abode. He’ll probably stay for dinner.</p>
         </EquipmentItem>
         <EquipmentItem>
-          <span className="equipment-name">Bruner Wi-Fi Modem</span>
+          <span className="equipment-name">Brüner Wi-Fi Modem</span>
           <p>The Brüner WiFi Modem gives you wireless internet throughout your home. It also includes a Voice service adapter so we can listen and see if anything cool is happening at your place. </p>
         </EquipmentItem>
       </div>

@@ -222,7 +222,7 @@ const Header = () => (
             <ul>
               <li><Link to="/">Plans</Link></li>
               <li><Link to="/">Speeds</Link></li>
-              <li><Link to="/">About Bruner Dynamics</Link></li>
+              <li><Link to="/">About Brüner Dynamics</Link></li>
               <li><Link to="/">Equipment</Link></li>
             </ul>
           </NavItems>
@@ -244,7 +244,7 @@ const Header = () => (
             <ul>
               <li><Link to="/">Plans</Link></li>
               <li><Link to="/">Speeds</Link></li>
-              <li><Link to="/">About Bruner Dynamics</Link></li>
+              <li><Link to="/">About Brüner Dynamics</Link></li>
               <li><Link to="/">Equipment</Link></li>
             </ul>
           </div>

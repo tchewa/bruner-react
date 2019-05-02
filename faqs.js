@@ -122,7 +122,7 @@ const FAQ = () => {
   return (
     <FaqContainer>
       <LayoutContainer>
-        <h2 className="section-title">Bruner Dynamics FAQs</h2>
+        <h2 className="section-title">Brüner Dynamics FAQs</h2>
         {displayFaqs}
       </LayoutContainer>
     </FaqContainer>

@@ -53,6 +53,9 @@ const PackageCardItem = styled.div`
 
     @media screen and (max-width: 830px) {
       display: none;
+      padding: 30px 0;
+      margin: 20px 0;
+      border-top: 2px solid ${colors.blue};
 
       &.opened {
         display: block;
@@ -124,6 +127,12 @@ const PackageCardItem = styled.div`
 
     p {
       margin-bottom: 20px;
+    }
+
+    @media screen and (max-width: 830px) {
+      border-bottom: none;
+      margin-bottom: 0;
+      height: 100px;
     }
   }
 
@@ -298,7 +307,7 @@ const PackageCards = () => {
 
   return (
     <PackageContainer className="main-container">
-      <h2 className="section-title">Bruner's Best Plans:</h2>
+      <h2 className="section-title">Brüner's Best Plans:</h2>
       <LayoutContainer className="package-card-layout four-column">
         {displayPackages}
       </LayoutContainer>

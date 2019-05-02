@@ -63,7 +63,7 @@ const CtaContainer = styled.div`
 const CtaComponent = () => (
   <CtaContainer>
     <div className="desktop-cta">
-      <h2 className="section-title">Get Connected With Bruner Dynamics Today.</h2>
+      <h2 className="section-title">Get Connected With Brüner Dynamics Today.</h2>
       <button className="btn white">Call 1.888.888.8888</button>
     </div>
     <div className="mobile-cta">

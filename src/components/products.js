@@ -5,7 +5,7 @@ import {colors} from "../styles/global"
 import {products} from "../data/products.json"
 
 
-const EquipmentContainer = styled.div`
+const ProductContainer = styled.div`
   background-color: ${colors.lightgray};
   text-align: center;
 
@@ -36,7 +36,7 @@ const EquipmentContainer = styled.div`
   }
 `
 
-const EquipmentItem = styled.div`
+const ProductItem = styled.div`
   width: 48%;
   background-color: ${colors.white};
   border-radius: 10px;
@@ -69,17 +69,17 @@ const EquipmentItem = styled.div`
   }
 `
 
-const Equipment = () => {
+const Products = () => {
 
   const displayProducts = products.map((product, i) =>
-    <EquipmentItem key={i}>
+    <ProductItem key={i}>
       <span className="product-name">{product.name}</span>
       <p>{product.description}</p>
-    </EquipmentItem>
+    </ProductItem>
   )
 
   return (
-    <EquipmentContainer className="main-container">
+    <ProductContainer className="main-container">
       <LayoutContainer>
         <h2 className="section-title">Equipment</h2>
         <p>When you sign up for Brüner Dynamics, we make it easy to get connected. We’ll send a professional technician named Ralph to install your new dish in an optimal location and set up your wifi router inside your home. </p>
@@ -88,8 +88,8 @@ const Equipment = () => {
         </div>
 
       </LayoutContainer>
-    </EquipmentContainer>
+    </ProductContainer>
   )
 }
 
-export default Equipment
+export default Products

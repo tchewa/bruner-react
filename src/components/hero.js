@@ -92,11 +92,11 @@ class HeroContent extends React.Component {
     return (
       <LayoutContainer>
         <HeroContainer>
-          <h1>Discover Bruner Satellite Internet Bundles</h1>
+          <h1>Discover Brüner Satellite Internet Bundles</h1>
           <p>Jimmy B is here to make the world a better place. One connection at a time.</p>
           <div className="zipField">
             <input className="zipcode-input" type="text" maxLength="5" name="zipcode" placeholder="Enter Zip" onInput={ (e) => { checkZip(e)} }/>
-            <button>Connect with the Bruner</button>
+            <button>Connect with the Brüner</button>
           </div>
         </HeroContainer>
       </LayoutContainer>

@@ -261,7 +261,7 @@ const handleClick = (e) => {
 
 const PackageCards = () => (
   <PackageContainer>
-    <h2 className="section-title">Bruner's Best Plans:</h2>
+    <h2 className="section-title">Brüner's Best Plans:</h2>
     <LayoutContainer className="package-card-layout four-column">
       <PackageCardItem>
         <div className="package-title-content">
