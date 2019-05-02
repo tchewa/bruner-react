@@ -204,7 +204,6 @@ const NavItems = styled.div`
 
 const handleClick = (e) => {
   return (
-    console.log(e.currentTarget.classList.toggle('mobile-opened')),
     e.currentTarget.parentElement.nextElementSibling.classList.toggle('opened')
   )
 }

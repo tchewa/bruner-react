@@ -253,7 +253,6 @@ const PackageCardItem = styled.div`
 
 const handleClick = (e) => {
   return (
-    console.log(e.currentTarget.parentElement.nextElementSibling),
     e.currentTarget.classList.toggle('active'),
     e.currentTarget.parentElement.nextElementSibling.classList.toggle('opened')
   )

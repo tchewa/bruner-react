@@ -28,8 +28,11 @@ const CtaContainer = styled.div`
       display: none;
     }
 
-    button {
+    a {
       font-size: 15px;
+      padding: 20px;
+      cursor: pointer;
+      height: auto;
 
       &:hover {
         box-shadow: 0px 5px 15px 1px #2f2f2f;
@@ -72,11 +75,11 @@ const CtaComponent = () => (
   <CtaContainer className="main-container">
     <div className="desktop-cta">
       <h2 className="section-title">Get Connected With Brüner Dynamics Today.</h2>
-      <button className="btn white">Call 1.888.888.8888</button>
+      <a href="tel:1-888-888-8888" className="btn white">Call 1.888.888.8888</a>
     </div>
     <div className="mobile-cta">
       <h2>Click to Call</h2>
-      <h2><a tel="1-888-888-8888">1.888.888.8888</a></h2>
+      <h2><a href="tel:1-888-888-8888">1.888.888.8888</a></h2>
     </div>
   </CtaContainer>
 )

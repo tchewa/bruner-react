@@ -94,7 +94,7 @@ const PackageCardItem = styled.div`
       }
     }
 
-    box-shadow: 5px 5px 21px 0px ${colors.darkergray};
+    box-shadow: 0px 5px 21px 5px #9c9c9c;
     border-left: 3px solid transparent;
     transform: scale(1.07);
     z-index: 5;
@@ -106,6 +106,10 @@ const PackageCardItem = styled.div`
 
     @media screen and (max-width: 830px) {
       border-left: none;
+
+      &:hover {
+        box-shadow: 5px 5px 21px 0px ${colors.darkergray};
+      }
     }
   }
 
@@ -260,7 +264,6 @@ const PackageCardItem = styled.div`
 
 const handleClick = (e) => {
   return (
-    console.log(e.currentTarget.parentElement.nextElementSibling),
     e.currentTarget.classList.toggle('active'),
     e.currentTarget.parentElement.nextElementSibling.classList.toggle('opened')
   )
