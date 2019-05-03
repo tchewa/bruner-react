@@ -3,6 +3,7 @@ import styled from "@emotion/styled"
 import { LayoutContainer } from "../components/layout"
 import {colors} from "../styles/global"
 import {packageCards} from "../data/packages.json"
+import {disclaimers} from "../data/legal.json"
 
 
 const PackageContainer = styled.div`
@@ -308,6 +309,10 @@ const PackageCards = () => {
     </PackageCardItem>
   )
 
+  const displayDisclaimers = disclaimers.map((disclaimer, i) =>
+    <span key={i}>{disclaimer.content}</span>
+  )
+
   return (
     <PackageContainer className="main-container">
       <h2 className="section-title">Brüner's Best Plans:</h2>
@@ -315,9 +320,7 @@ const PackageCards = () => {
         {displayPackages}
       </LayoutContainer>
       <div className="disclaimers">
-        <span>*Does not include The Patriot (2000) for obvious reasons. Independence Day and Red Dawn count, but not the re-makes. Each viewing of either Rocky IV, Iron Eagle, or Top Gun will result in a $5 credit to your account which will be applied to your subsequent bill.</span>
-        <span>**Ralph can’t come on Tuesday nights. Bowling league.</span>
-        <span>†Badminton match must be within a 45 mile radius of Ogden, UT.</span>
+        {displayDisclaimers}
       </div>
     </PackageContainer>
   )

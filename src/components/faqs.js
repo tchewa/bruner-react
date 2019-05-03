@@ -26,9 +26,17 @@ const FaqItem = styled.div`
       .plus-minus-icon {
 
         span {
-
+          &:first-of-type() {
+            opacity: 0;
+          }
+          &:nth-of-type(2) {
+            transform: rotate(-180deg);
+          }
+          &:nth-of-type(3) {
+            opacity: 0;
+          }
           &:last-of-type {
-            transform: rotate(1440deg);
+            transform: rotate(0deg);
           }
         }
       }
@@ -51,8 +59,9 @@ const FaqItem = styled.div`
         right: 20px;
         top: 50%;
         transform: translateY(-50%);
-        transition: .25s;
+        transition: transform .25s ease-in-out;
 
+        &:nth-of-type(2),
         &:last-of-type {
           transform: rotate(-90deg);
           top: 28px;
@@ -107,6 +116,8 @@ const FAQ = () => {
       <div className="faq-question" onClick={ (e) => { return handleClick(e)} }>
         <span className="question">{faq.question}</span>
         <div className="plus-minus-icon">
+          <span></span>
+          <span></span>
           <span></span>
           <span></span>
         </div>
