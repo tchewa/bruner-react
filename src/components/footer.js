@@ -36,6 +36,8 @@ const FooterContainer = styled.footer`
     border: none;
     background-color: ${colors.green};
     height: 2px;
+    max-width: 300px;
+    margin: 10px 0;
   }
 
   h3 {

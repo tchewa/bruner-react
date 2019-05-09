@@ -5,7 +5,6 @@ import {colors} from "../styles/global"
 import {faqs} from "../data/faqs.json"
 
 const FaqItem = styled.div`
-
   .faq-question {
     background-color: ${colors.blue};
     height: 60px;
