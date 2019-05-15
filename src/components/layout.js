@@ -17,6 +17,10 @@ import Footer from "./footer"
 export const LayoutContainer = styled.div`
   max-width: 1000px;
   margin: 0 auto;
+
+  &.full-width {
+    max-width: none;
+  }
 `
 
 const Layout = ({ children }) => (

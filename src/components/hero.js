@@ -7,7 +7,7 @@ import {colors} from "../styles/global"
 const HeroContainer = styled.div`
   text-align: center;
   color: white;
-  margin-top: 30px;
+  margin-top: 80px;
 
   @media screen and (max-width: 830px) {
     text-align: left;

@@ -102,6 +102,7 @@ const FaqContainer = styled.div`
 `
 
 const handleClick = (e) => {
+
   return (
     e.currentTarget.classList.toggle('active'),
     e.currentTarget.nextElementSibling.classList.toggle('opened')
