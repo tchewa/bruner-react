@@ -29,6 +29,7 @@ const MainHeader = styled.header`
         right: 0;
         z-index: 1000;
         box-shadow: 0 5px 15px -8px ${colors.black};
+
         .phone {
           color: ${colors.black};
         }
@@ -43,6 +44,7 @@ const MainHeader = styled.header`
         @media screen and (min-width: 830px) {
           background-color: transparent;
           height: 82px;
+          box-shadow: none;
 
           .scrolledLogo {
             display: none;
