@@ -11,7 +11,7 @@ import { StaticQuery, graphql } from "gatsby"
 
 import Header from "./header"
 import styled from "@emotion/styled"
-import  BaseStyles  from "../styles/global"
+import BaseStyles  from "../styles/global"
 import Footer from "./footer"
 
 export const LayoutContainer = styled.div`

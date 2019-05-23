@@ -275,7 +275,7 @@ const handleClick = (e) => {
 
 const Header = () => {
 
-  //    [state variable, updater function]      inition state variable value
+  //    [state variable, updater function]      initialize state variable value
   const [scrolledTop, setScrolledTop] = useState(window.pageYOffset === 0)
 
   window.addEventListener('scroll', () => {
