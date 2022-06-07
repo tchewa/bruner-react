@@ -2,7 +2,7 @@ import React from "react"
 import { LayoutContainer } from "./layout"
 import styled from "@emotion/styled"
 import {colors} from "../styles/global"
-
+import { sideBySides } from "../data/sideBySides.json"
 
 
 const SideBySideContainer = styled.div`
@@ -19,8 +19,10 @@ const SideBySideContainer = styled.div`
   @media screen and (max-width: 830px) {
     padding: 30px;
   }
+`
 
-  .side-by-side {
+const SideBySideItem = styled.div`
+  &.side-by-side {
     display: flex;
 
     @media screen and (max-width: 830px) {
@@ -57,17 +59,27 @@ const SideBySideContainer = styled.div`
   }
 `
 
-const SideBySide = ({children, imgsrc, imgalt, bgcolor}) => (
-  <SideBySideContainer className={bgcolor + " main-container"}>
-    <LayoutContainer className="side-by-side">
+
+const SideBySide = () => {
+  const displaySideBySides = sideBySides.map((sideBySide, i) =>
+    <SideBySideItem className="side-by-side" key={i}>
       <div className="half-width left-content">
-        <img src={imgsrc} alt={imgalt}/>
+        <img src={require(`../images/${sideBySide["imageSrc"]}`)} alt={sideBySide.imageAlt} />
       </div>
       <div className="half-width right-content">
-        {children}
+        <h2>{sideBySide.heading}</h2>
+        <p>{sideBySide.content.text[0]}</p>
       </div>
+    </SideBySideItem>
+  )
+
+  return (
+    <LayoutContainer>
+      <SideBySideContainer className="main-container">
+        {displaySideBySides}
+      </SideBySideContainer>
     </LayoutContainer>
-  </SideBySideContainer>
-)
+  )
+}
 
 export default SideBySide

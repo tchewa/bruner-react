@@ -1,0 +1,23 @@
+{
+  "sideBySides": [
+    {
+      "heading": "We're Here to Brand Everything, Everywhere, Anytime",
+      "content": "Flat screen tv? Wireless device? Tablet? Laptop? We can put our brand image on all of them. We can do it whenever we want, but mostly you'll see our logo on your screen when you're experiencing technical difficulties: This way, you will associate our brand with some of your most emotional moments.",
+      "imageSrc": "bruner-devices.png",
+      "imageAlt": "Bruner products"
+    },
+    {
+      "heading": "What is a Brüner?",
+      "content": [
+        {
+          "text": "You might as well ask what salt tastes like or how water feels. Until you've interacted with a Brüner first hand, you can only imagine how great you'll feel. A warm handshake, a compliment, a rubix cube coaching session, or just a chat about your weekend will leave you feeling better about your self and the world in general."
+        },
+        {
+          "text": "Brüner Dynamics is on course to change the world:"
+        }
+      ],
+      "imageSrc": "satellite.png",
+      "imageAlt": "Bruner products"
+    }
+  ]
+}

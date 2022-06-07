@@ -323,7 +323,7 @@ const Header = () => {
             </div>
           </MobileNav>
         </LayoutContainer>
-        <HeroContent></HeroContent>
+        <HeroContent />
       </MainHeader>
     </div>
   )
